@@ -120,7 +120,7 @@ curl --fail -o ${M17HOSTS} -s http://www.pistar.uk/downloads/M17_Hosts.txt --use
 curl --fail -o ${YSFHOSTS} -s http://www.pistar.uk/downloads/YSF_Hosts.txt --user-agent "Pi-Star_${pistarCurVersion}"
 curl --fail -o ${FCSHOSTS} -s http://www.pistar.uk/downloads/FCS_Hosts.txt --user-agent "Pi-Star_${pistarCurVersion}"
 curl --fail -o ${XLXHOSTS} -s http://www.pistar.uk/downloads/XLXHosts.txt --user-agent "Pi-Star_${pistarCurVersion}"
-curl --fail -o ${NXDNIDFILE} -s http://www.pistar.uk/downloads/NXDN.csv --user-agent "Pi-Star_${pistarCurVersion}"
+curl --fail -o ${NXDNIDFILE} -s https://www.gmrs-link.com/pistar/NXDN.csv --user-agent "Pi-Star_${pistarCurVersion}"
 curl --fail -o ${NXDNHOSTS} -s http://www.pistar.uk/downloads/NXDN_Hosts.txt --user-agent "Pi-Star_${pistarCurVersion}"
 curl --fail -o ${TGLISTBM} -s http://www.pistar.uk/downloads/TGList_BM.txt --user-agent "Pi-Star_${pistarCurVersion}"
 curl --fail -o ${TGLISTP25} -s http://www.pistar.uk/downloads/TGList_P25.txt --user-agent "Pi-Star_${pistarCurVersion}"
