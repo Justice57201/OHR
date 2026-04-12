@@ -130,11 +130,11 @@ curl --fail -o ${TGLISTYSF} -s http://www.pistar.uk/downloads/TGList_YSF.txt --u
 if [ -f ${NEXTIONGROUPS} ]; then
 	# Update ${NEXTIONGROUPS}
  	if [[ $(find "${NEXTIONGROUPS}" -mtime +7) ]]; then
-  		curl --fail -o ${NEXTIONGROUPS} -s http://www.pistar.uk/downloads/groups.txt --user-agent "Pi-Star_${pistarCurVersion}"
+  		curl --fail -o ${NEXTIONGROUPS} -s https://www.gmrs-link.com/pistar/pi-star/groups.txt --user-agent "Pi-Star_${pistarCurVersion}"
   	fi
 else
 	# Get ${NEXTIONGROUPS}
- 	curl --fail -o ${NEXTIONGROUPS} -s http://www.pistar.uk/downloads/groups.txt --user-agent "Pi-Star_${pistarCurVersion}"
+ 	curl --fail -o ${NEXTIONGROUPS} -s https://www.gmrs-link.com/pistar/pi-star/groups.txt --user-agent "Pi-Star_${pistarCurVersion}"
 fi
 # Download Nextion Users
 if [ -f "${NEXTIONUSERS}" ]; then
