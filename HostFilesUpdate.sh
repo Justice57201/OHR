@@ -137,12 +137,16 @@ else
  	curl --fail -o ${NEXTIONGROUPS} -s http://www.pistar.uk/downloads/groups.txt --user-agent "Pi-Star_${pistarCurVersion}"
 fi
 # Download Nextion Users
-if [ -f ${NEXTIONUSERS} ]; then
-	if [[ $(find "${NEXTIONUSERS}" -mtime +7) ]]; then
-		curl -sSL https://www.gmrs-link.com/pistar/pi-star/nextionUsers.csv --user-agent "Pi-Star_${pistarCurVersion}" | gunzip -c > ${NEXTIONUSERS}
-	fi
+if [ -f "${NEXTIONUSERS}" ]; then
+    if find "${NEXTIONUSERS}" -mtime +7 | grep -q .; then
+        curl -sSL https://www.gmrs-link.com/pistar/pi-star/nextionUsers.csv \
+        --user-agent "Pi-Star_${pistarCurVersion}" \
+        -o "${NEXTIONUSERS}"
+    fi
 else
-	curl -sSL https://www.gmrs-link.com/pistar/pi-star/nextionUsers.csv --user-agent "Pi-Star_${pistarCurVersion}" | gunzip -c > ${NEXTIONUSERS}
+    curl -sSL https://www.gmrs-link.com/pistar/pi-star/nextionUsers.csv \
+    --user-agent "Pi-Star_${pistarCurVersion}" \
+    -o "${NEXTIONUSERS}"
 fi
 
 # If there is a DMR Over-ride file, add it's contents to DMR_Hosts.txt
